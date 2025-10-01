@@ -8,56 +8,310 @@
     
 </body>
 </html>
-Kalino — کالینو :root{ --bg:#071325; /* سرمه‌ای تیره */ --card:#0f1b2a; --muted:#bfc9d6; --accent:#ff5a5f; /* قرمز تاکید */ --accent-2:#4caf50; /* سبز ثانویه */ --glass:rgba(255,255,255,0.03); } *{box-sizing:border-box} html,body{height:100%} body{ margin:0;font-family:system-ui,-apple-system,'Segoe UI','Vazirmatn',sans-serif;background:var(--bg);color:#fff;direction:rtl;-webkit-font-smoothing:antialiased;padding-bottom:72px; } .App{max-width:980px;margin:0 auto} .header{ display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 16px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent); position:sticky;top:0;z-index:30;border-bottom:1px solid rgba(255,255,255,0.03) } .header .left{position:absolute;left:16px;top:12px} .icon-btn{width:44px;height:44px;border-radius:10px;background:var(--card);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid rgba(255,255,255,0.03)} .brand{font-weight:700;font-size:18px;letter-spacing:0.6px} .search-wrap{width:100%;max-width:760px;margin:12px auto;display:flex;gap:10px;padding:0 16px} .search{flex:1;background:var(--card);border-radius:12px;padding:10px 12px;display:flex;align-items:center;border:1px solid rgba(255,255,255,0.03)} .search input{background:transparent;border:0;outline:none;color:#fff;font-size:15px;width:100%} .search input::placeholder{color:var(--accent)} /* نوشته داخل نوار قرمز */ .search .magn{opacity:0.9;margin-left:8px} .search .voice{margin-right:8px;opacity:0.85} .actions{display:flex;gap:10px} .actions .cart-badge{position:relative} .badge{position:absolute;top:-6px;left:-6px;background:var(--accent-2);color:#fff;border-radius:50%;padding:4px 7px;font-size:12px} .main{padding:12px} .section{margin-bottom:18px} .card-row{display:flex;gap:12px;overflow:auto;padding-bottom:6px} .promo{background:linear-gradient(90deg, rgba(255,90,95,0.12), rgba(76,175,80,0.06));padding:12px;border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:12px} .promo .txt{max-width:65%} .promo h3{margin:0;font-size:16px} .promo p{margin:6px 0;color:var(--muted)} .view-all{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--accent);cursor:pointer} .cat{min-width:120px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:12px;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.02)} .cat .emoji{font-size:28px;margin-bottom:8px} .cat p{margin:0;color:var(--muted);font-size:14px} .products{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px} .prod{background:var(--card);padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;gap:8px} .prod img{width:100%;height:110px;object-fit:cover;border-radius:8px} .prod .title{font-weight:600} .prod .price{color:var(--muted);font-size:14px} .prod button{margin-top:auto;padding:8px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer} .footer-space{height:86px} /* bottom nav */ .bottom-nav{position:fixed;left:0;right:0;bottom:0;height:64px;background:linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.2));display:flex;justify-content:center;align-items:center;z-index:50} .bottom-inner{max-width:980px;display:flex;justify-content:space-around;align-items:center;gap:6px;width:100%;padding:6px} .bottom-btn{background:var(--card);border-radius:12px;padding:8px 12px;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--muted);cursor:pointer;border:1px solid rgba(255,255,255,0.02)} .bottom-btn.active{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);color:#fff} /* user panel */ .user-panel{position:fixed;left:8px;top:72px;width:320px;max-width:92vw;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.03);display:none;z-index:60} .user-panel h3{margin:0 0 6px 0} .user-info{background:var(--glass);padding:10px;border-radius:10px;margin-bottom:10px} .user-list{display:flex;flex-direction:column;gap:8px} .u-btn{background:transparent;border:1px solid rgba(255,255,255,0.03);padding:9px;border-radius:8px;color:var(--muted);text-align:right;cursor:pointer} .u-row{display:flex;justify-content:space-between;align-items:center} .wallet{display:flex;justify-content:space-between;align-items:center;gap:8px} .input{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:#0b1723;color:#fff;margin-bottom:8px} /* responsive tweaks */ @media(min-width:720px){ .header{padding:18px} .search-wrap{margin-top:6px} } 
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kalino — کالینو</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<style>
+:root{
+  --bg:#071325; /* سرمه‌ای تیره */
+  --card:#0f1b2a;
+  --muted:#bfc9d6;
+  --accent:#ff5a5f; /* قرمز تاکید */
+  --accent-2:#4caf50; /* سبز ثانویه */
+  --glass:rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;font-family:system-ui,-apple-system,'Segoe UI','Vazirmatn',sans-serif;background:var(--bg);color:#fff;direction:rtl;-webkit-font-smoothing:antialiased;padding-bottom:72px;
+}
+.App{max-width:980px;margin:0 auto}
+.header{
+  display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 16px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);
+  position:sticky;top:0;z-index:30;border-bottom:1px solid rgba(255,255,255,0.03)
+}
+.header .left{position:absolute;left:16px;top:12px}
+.icon-btn{width:44px;height:44px;border-radius:10px;background:var(--card);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid rgba(255,255,255,0.03)}
+.brand{font-weight:700;font-size:18px;letter-spacing:0.6px}
+.search-wrap{width:100%;max-width:760px;margin:12px auto;display:flex;gap:10px;padding:0 16px}
+.search{flex:1;background:var(--card);border-radius:12px;padding:10px 12px;display:flex;align-items:center;border:1px solid rgba(255,255,255,0.03)}
+.search input{background:transparent;border:0;outline:none;color:#fff;font-size:15px;width:100%}
+.search input::placeholder{color:var(--accent)} /* نوشته داخل نوار قرمز */
+.search .magn{opacity:0.9;margin-left:8px}
+.search .voice{margin-right:8px;opacity:0.85}
+.actions{display:flex;gap:10px}
+.actions .cart-badge{position:relative}
+.badge{position:absolute;top:-6px;left:-6px;background:var(--accent-2);color:#fff;border-radius:50%;padding:4px 7px;font-size:12px}
+.main{padding:12px}
+.section{margin-bottom:18px}
+.card-row{display:flex;gap:12px;overflow:auto;padding-bottom:6px}
+.promo{background:linear-gradient(90deg, rgba(255,90,95,0.12), rgba(76,175,80,0.06));padding:12px;border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.promo .txt{max-width:65%}
+.promo h3{margin:0;font-size:16px}
+.promo p{margin:6px 0;color:var(--muted)}
+.view-all{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--accent);cursor:pointer}
+.cat{min-width:120px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:12px;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.02)}
+.cat .emoji{font-size:28px;margin-bottom:8px}
+.cat p{margin:0;color:var(--muted);font-size:14px}
+.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.prod{background:var(--card);padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;gap:8px}
+.prod img{width:100%;height:110px;object-fit:cover;border-radius:8px}
+.prod .title{font-weight:600}
+.prod .price{color:var(--muted);font-size:14px}
+.prod button{margin-top:auto;padding:8px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+.footer-space{height:86px}
+/* bottom nav */
+.bottom-nav{position:fixed;left:0;right:0;bottom:0;height:64px;background:linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.2));display:flex;justify-content:center;align-items:center;z-index:50}
+.bottom-inner{max-width:980px;display:flex;justify-content:space-around;align-items:center;gap:6px;width:100%;padding:6px}
+.bottom-btn{background:var(--card);border-radius:12px;padding:8px 12px;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--muted);cursor:pointer;border:1px solid rgba(255,255,255,0.02)}
+.bottom-btn.active{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);color:#fff}
+/* user panel */
+.user-panel{position:fixed;left:8px;top:72px;width:320px;max-width:92vw;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.03);display:none;z-index:60}
+.user-panel h3{margin:0 0 6px 0}
+.user-info{background:var(--glass);padding:10px;border-radius:10px;margin-bottom:10px}
+.user-list{display:flex;flex-direction:column;gap:8px}
+.u-btn{background:transparent;border:1px solid rgba(255,255,255,0.03);padding:9px;border-radius:8px;color:var(--muted);text-align:right;cursor:pointer}
+.u-row{display:flex;justify-content:space-between;align-items:center}
+.wallet{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.input{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:#0b1723;color:#fff;margin-bottom:8px}
+/* responsive tweaks */
+@media(min-width:720px){
+  .header{padding:18px}
+  .search-wrap{margin-top:6px}
+}
+</style>
+</head>
+<body>
+<div class="App">
+  <header class="header">
+    <div class="left">
+      <div class="icon-btn" id="userBtn" title="حساب کاربری">👤</div>
+    </div>
+    <div class="brand">Kalino</div>
+  </header>
 
-👤
+  <div class="search-wrap">
+    <div class="search">
+      <input id="searchInput" placeholder="چی لازم داری؟" />
+      <div class="magn">🔍</div>
+    </div>
+    <div class="actions">
+      <div class="icon-btn cart-badge" id="openCart">🛒<div class="badge" id="cartCount">0</div></div>
+    </div>
+  </div>
 
-Kalino
+  <main class="main">
+    <section class="section promo">
+      <div class="txt">
+        <h3>تخفیفات ویژه امروز</h3>
+        <p>کالاهای منتخب با تخفیف محدود — عجله کنید!</p>
+      </div>
+      <div>
+        <button class="view-all" id="viewPromos">مشاهده همه</button>
+      </div>
+    </section>
 
-🔍
+    <section class="section">
+      <h2>دسته‌بندی‌ها</h2>
+      <div class="card-row" id="categoriesRow">
+        <!-- dynamic cats -->
+      </div>
+    </section>
 
-🛒
+    <section class="section">
+      <h2>پیشنهادها برای شما</h2>
+      <div class="products" id="productsGrid">
+        <!-- products -->
+      </div>
+    </section>
+  </main>
 
-0
+  <div class="footer-space"></div>
 
-تخفیفات ویژه امروز
+  <!-- user panel -->
+  <aside class="user-panel" id="userPanel">
+    <div class="user-info">
+      <h3 id="userName">نام و نام خانوادگی</h3>
+      <div id="userPhone" style="color:var(--muted);">۰۹۱2xxxxxxx</div>
+    </div>
+    <div class="user-list">
+      <div class="u-row"><div>کیف پول</div><div id="walletAmount">۰ تومان</div></div>
+      <button class="u-btn" id="openWallet">افزایش موجودی</button>
+      <button class="u-btn" id="viewOrders">لیست سفارش‌ها</button>
+      <button class="u-btn" id="callSupport">تماس با پشتیبانی</button>
+      <button class="u-btn" id="chatSupport">چت با پشتیبانی</button>
+      <button class="u-btn" id="referFriend">معرفی دوستان</button>
+      <button class="u-btn" id="changeLang">زبان</button>
+      <button class="u-btn" id="faqBtn">سوالات متداول</button>
+      <button class="u-btn" id="rulesBtn">قوانین</button>
+    </div>
+  </aside>
 
-کالاهای منتخب با تخفیف محدود — عجله کنید!
+  <!-- wallet modal -->
+  <div id="walletModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:80;align-items:center;justify-content:center">
+    <div style="background:var(--card);padding:16px;border-radius:12px;width:92%;max-width:420px;color:#fff">
+      <h3>افزایش موجودی کیف پول</h3>
+      <input id="walletInput" class="input" placeholder="مبلغ به تومان" type="number" />
+      <div style="display:flex;gap:8px">
+        <button class="btn-ok" style="flex:1;padding:10px;border-radius:8px;background:var(--accent);border:0;color:#fff;">انتقال</button>
+        <button class="btn-cancel" style="flex:1;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);">انصراف</button>
+      </div>
+    </div>
+  </div>
 
-مشاهده همه 
+  <!-- cart drawer -->
+  <div id="cartDrawer" style="display:none;position:fixed;right:8px;bottom:86px;width:340px;max-width:92vw;background:var(--card);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);z-index:70">
+    <h3>سبد خرید</h3>
+    <div id="cartItems"></div>
+    <div style="margin-top:10px;display:flex;gap:8px;justify-content:space-between;align-items:center"><div id="cartTotal">جمع کل: 0 تومان</div><button id="checkoutBtn" style="background:var(--accent);border:0;padding:8px 12px;border-radius:8px;color:#fff">ثبت سفارش</button></div>
+  </div>
 
-<section class="section"> <h2>دسته‌بندی‌ها</h2> <div class="card-row" id="categoriesRow"> <!-- dynamic cats --> </div> </section> <section class="section"> <h2>پیشنهادها برای شما</h2> <div class="products" id="productsGrid"> <!-- products --> </div> </section> 
+  <!-- bottom nav -->
+  <nav class="bottom-nav">
+    <div class="bottom-inner">
+      <div class="bottom-btn active" id="navHome">🏠<div style="font-size:12px">خانه</div></div>
+      <div class="bottom-btn" id="navCats">📂<div style="font-size:12px">دسته‌بندی</div></div>
+      <div class="bottom-btn" id="navCart">🛒<div style="font-size:12px">سبد خرید</div></div>
+    </div>
+  </nav>
+</div>
 
-نام و نام خانوادگی
+<script>
+// sample data
+const categories = [
+  {key:'clean',title:'دستمال و شوینده',emoji:'🧼'},
+  {key:'dairy',title:'لبنیات',emoji:'🥛'},
+  {key:'grocery',title:'خوار و بار',emoji:'🛒'},
+  {key:'beauty',title:'آرایش و بهداشتی',emoji:'💄'},
+  {key:'drinks',title:'نوشیدنی',emoji:'🥤'},
+  {key:'snacks',title:'تنقلات',emoji:'🍫'},
+  {key:'breakfast',title:'صبحانه',emoji:'🥐'},
+  {key:'canned',title:'کنسرو و غذای آماده',emoji:'🥫'},
+  {key:'meat',title:'سوسیس و کالباس',emoji:'🍖'},
+  {key:'frozen',title:'غذای منجمد',emoji:'❄️'},
+  {key:'baby',title:'کودک و نوزاد',emoji:'👶'},
+  {key:'hygiene',title:'لوازم بهداشتی',emoji:'🧴'}
+];
+const products = [
+  {id:1,name:'چیپس نمکی',price:20000,img:'https://via.placeholder.com/300x200?text=چیپس'},
+  {id:2,name:'شیر کم چرب 1L',price:15000,img:'https://via.placeholder.com/300x200?text=شیر'},
+  {id:3,name:'کنسرو لوبیا',price:12000,img:'https://via.placeholder.com/300x200?text=کنسرو'},
+  {id:4,name:'کالباس ویژه',price:45000,img:'https://via.placeholder.com/300x200?text=کالباس'},
+  {id:5,name:'آب معدنی',price:8000,img:'https://via.placeholder.com/300x200?text=آب'}
+];
 
-۰۹۱2xxxxxxx
+// state
+let cart = JSON.parse(localStorage.getItem('kalino_cart')||'[]');
+let wallet = parseInt(localStorage.getItem('kalino_wallet')||'0');
+let user = JSON.parse(localStorage.getItem('kalino_user')||'{"name":"کاربر نمونه","phone":"09120000000"}');
 
-کیف پول
+// init
+const catsRow = document.getElementById('categoriesRow');
+const prodGrid = document.getElementById('productsGrid');
+const cartCount = document.getElementById('cartCount');
+const userBtn = document.getElementById('userBtn');
+const userPanel = document.getElementById('userPanel');
+const walletAmount = document.getElementById('walletAmount');
+const userName = document.getElementById('userName');
+const userPhone = document.getElementById('userPhone');
+const walletModal = document.getElementById('walletModal');
+const cartDrawer = document.getElementById('cartDrawer');
 
-۰ تومان
+function renderCategories(){
+  catsRow.innerHTML='';
+  categories.forEach(c=>{
+    const el = document.createElement('div'); el.className='cat';
+    el.innerHTML = `<div class="emoji">${c.emoji}</div><strong>${c.title}</strong><p>مشاهده همه</p>`;
+    catsRow.appendChild(el);
+  });
+}
+function renderProducts(){
+  prodGrid.innerHTML='';
+  products.forEach(p=>{
+    const d=document.createElement('div'); d.className='prod';
+    d.innerHTML = `<img src="${p.img}" alt="${p.name}"><div class="title">${p.name}</div><div class="price">${p.price.toLocaleString()} تومان</div><button onclick="addToCart(${p.id})">افزودن به سبد</button>`;
+    prodGrid.appendChild(d);
+  });
+}
+function syncCart(){
+  localStorage.setItem('kalino_cart',JSON.stringify(cart));
+  cartCount.textContent = cart.reduce((s,i)=>s+i.qty,0);
+}
+function addToCart(id){
+  const p = products.find(x=>x.id===id); if(!p) return;
+  const ex = cart.find(i=>i.id===id);
+  if(ex) ex.qty++; else cart.push({id:p.id,name:p.name,price:p.price,qty:1});
+  syncCart(); renderCart();
+  // tiny animation
+  const btn = event.target; btn.animate([{transform:'translateY(0)'},{transform:'translateY(-6px)'},{transform:'translateY(0)'}],{duration:260});
+}
+function renderCart(){
+  const wrap = document.getElementById('cartItems'); wrap.innerHTML='';
+  let total=0;
+  cart.forEach(item=>{
+    total+=item.price*item.qty;
+    const div=document.createElement('div'); div.style.display='flex'; div.style.justifyContent='space-between'; div.style.alignItems='center'; div.style.marginBottom='8px';
+    div.innerHTML = `<div><div style="font-weight:600">${item.name}</div><div style="color:var(--muted);font-size:13px">${item.qty} × ${item.price.toLocaleString()} تومان</div></div>`;
+    const ctr=document.createElement('div');
+    const plus=document.createElement('button'); plus.textContent='+'; plus.onclick=()=>{item.qty++; syncCart(); renderCart();};
+    const minus=document.createElement('button'); minus.textContent='-'; minus.onclick=()=>{item.qty--; if(item.qty<=0){cart=cart.filter(i=>i.id!==item.id);} syncCart(); renderCart();};
+    ctr.appendChild(plus); ctr.appendChild(minus);
+    div.appendChild(ctr);
+    wrap.appendChild(div);
+  });
+  document.getElementById('cartTotal').textContent = 'جمع کل: ' + total.toLocaleString() + ' تومان';
+}
 
-افزایش موجودی لیست سفارش‌ها تماس با پشتیبانی چت با پشتیبانی معرفی دوستان زبان سوالات متداول قوانین 
+// user panel toggle
+userBtn.addEventListener('click',()=>{
+  if(userPanel.style.display==='none' || userPanel.style.display===''){
+    userPanel.style.display='block';
+  } else userPanel.style.display='none';
+});
+// fill user
+function renderUser(){
+  userName.textContent = user.name;
+  userPhone.textContent = user.phone;
+  walletAmount.textContent = wallet.toLocaleString() + ' تومان';
+}
 
-افزایش موجودی کیف پول
+// wallet modal
+document.getElementById('openWallet').addEventListener('click',()=>{walletModal.style.display='flex';});
+walletModal.querySelector('.btn-cancel').addEventListener('click',()=>{walletModal.style.display='none';});
+walletModal.querySelector('.btn-ok').addEventListener('click',()=>{
+  const v = parseInt(document.getElementById('walletInput').value||'0'); if(v>0){wallet += v; localStorage.setItem('kalino_wallet',wallet); renderUser(); walletModal.style.display='none'; document.getElementById('walletInput').value=''; alert('موجودی با موفقیت افزایش یافت');} else alert('مبلغ معتبر نیست');
+});
 
-انتقال انصراف 
+// cart drawer toggles
+document.getElementById('openCart').addEventListener('click',()=>{cartDrawer.style.display = cartDrawer.style.display==='none'?'block':'none'; renderCart();});
 
-سبد خرید
+// bottom nav
+const navHome = document.getElementById('navHome'); const navCats = document.getElementById('navCats'); const navCart = document.getElementById('navCart');
+navHome.addEventListener('click',()=>{setActive(navHome); window.scrollTo({top:0,behavior:'smooth'})});
+navCats.addEventListener('click',()=>{setActive(navCats); document.getElementById('categoriesRow').scrollIntoView({behavior:'smooth'})});
+navCart.addEventListener('click',()=>{setActive(navCart); cartDrawer.style.display='block'; renderCart();});
+function setActive(el){document.querySelectorAll('.bottom-btn').forEach(b=>b.classList.remove('active')); el.classList.add('active');}
 
-جمع کل: 0 تومان
+// view promos
+document.getElementById('viewPromos').addEventListener('click',()=>{alert('صفحه تخفیفات هنوز تکمیل نشده — بعدا اضافه می‌شود');});
+// support actions
+document.getElementById('callSupport').addEventListener('click',()=>{window.location.href='tel:09120000000'});
+document.getElementById('chatSupport').addEventListener('click',()=>{alert('چت با پشتیبانی (نمایشی)')});
 
-ثبت سفارش
+// basic search filter
+document.getElementById('searchInput').addEventListener('input',(e)=>{
+  const q = e.target.value.trim().toLowerCase(); document.querySelectorAll('.prod').forEach(node=>{
+    const t = node.querySelector('.title').textContent.toLowerCase(); node.style.display = t.includes(q)?'flex':'none';
+  });
+});
 
-🏠
+// init render
+renderCategories(); renderProducts(); syncCart(); renderCart(); renderUser();
 
-خانه
-
-📂
-
-دسته‌بندی
-
-🛒
-
-سبد خرید
-
-// sample data const categories = [ {key:'clean',title:'دستمال و شوینده',emoji:'🧼'}, {key:'dairy',title:'لبنیات',emoji:'🥛'}, {key:'grocery',title:'خوار و بار',emoji:'🛒'}, {key:'beauty',title:'آرایش و بهداشتی',emoji:'💄'}, {key:'drinks',title:'نوشیدنی',emoji:'🥤'}, {key:'snacks',title:'تنقلات',emoji:'🍫'}, {key:'breakfast',title:'صبحانه',emoji:'🥐'}, {key:'canned',title:'کنسرو و غذای آماده',emoji:'🥫'}, {key:'meat',title:'سوسیس و کالباس',emoji:'🍖'}, {key:'frozen',title:'غذای منجمد',emoji:'❄️'}, {key:'baby',title:'کودک و نوزاد',emoji:'👶'}, {key:'hygiene',title:'لوازم بهداشتی',emoji:'🧴'} ]; const products = [ {id:1,name:'چیپس نمکی',price:20000,img:'https://via.placeholder.com/300x200?text=چیپس'}, {id:2,name:'شیر کم چرب 1L',price:15000,img:'https://via.placeholder.com/300x200?text=شیر'}, {id:3,name:'کنسرو لوبیا',price:12000,img:'https://via.placeholder.com/300x200?text=کنسرو'}, {id:4,name:'کالباس ویژه',price:45000,img:'https://via.placeholder.com/300x200?text=کالباس'}, {id:5,name:'آب معدنی',price:8000,img:'https://via.placeholder.com/300x200?text=آب'} ]; // state let cart = JSON.parse(localStorage.getItem('kalino_cart')||'[]'); let wallet = parseInt(localStorage.getItem('kalino_wallet')||'0'); let user = JSON.parse(localStorage.getItem('kalino_user')||'{"name":"کاربر نمونه","phone":"09120000000"}'); // init const catsRow = document.getElementById('categoriesRow'); const prodGrid = document.getElementById('productsGrid'); const cartCount = document.getElementById('cartCount'); const userBtn = document.getElementById('userBtn'); const userPanel = document.getElementById('userPanel'); const walletAmount = document.getElementById('walletAmount'); const userName = document.getElementById('userName'); const userPhone = document.getElementById('userPhone'); const walletModal = document.getElementById('walletModal'); const cartDrawer = document.getElementById('cartDrawer'); function renderCategories(){ catsRow.innerHTML=''; categories.forEach(c=>{ const el = document.createElement('div'); el.className='cat'; el.innerHTML = `<div class="emoji">${c.emoji}</div><strong>${c.title}</strong><p>مشاهده همه</p>`; catsRow.appendChild(el); }); } function renderProducts(){ prodGrid.innerHTML=''; products.forEach(p=>{ const d=document.createElement('div'); d.className='prod'; d.innerHTML = `<img src="${p.img}" alt="${p.name}"><div class="title">${p.name}</div><div class="price">${p.price.toLocaleString()} تومان</div><button onclick="addToCart(${p.id})">افزودن به سبد</button>`; prodGrid.appendChild(d); }); } function syncCart(){ localStorage.setItem('kalino_cart',JSON.stringify(cart)); cartCount.textContent = cart.reduce((s,i)=>s+i.qty,0); } function addToCart(id){ const p = products.find(x=>x.id===id); if(!p) return; const ex = cart.find(i=>i.id===id); if(ex) ex.qty++; else cart.push({id:p.id,name:p.name,price:p.price,qty:1}); syncCart(); renderCart(); // tiny animation const btn = event.target; btn.animate([{transform:'translateY(0)'},{transform:'translateY(-6px)'},{transform:'translateY(0)'}],{duration:260}); } function renderCart(){ const wrap = document.getElementById('cartItems'); wrap.innerHTML=''; let total=0; cart.forEach(item=>{ total+=item.price*item.qty; const div=document.createElement('div'); div.style.display='flex'; div.style.justifyContent='space-between'; div.style.alignItems='center'; div.style.marginBottom='8px'; div.innerHTML = `<div><div style="font-weight:600">${item.name}</div><div style="color:var(--muted);font-size:13px">${item.qty} × ${item.price.toLocaleString()} تومان</div></div>`; const ctr=document.createElement('div'); const plus=document.createElement('button'); plus.textContent='+'; plus.onclick=()=>{item.qty++; syncCart(); renderCart();}; const minus=document.createElement('button'); minus.textContent='-'; minus.onclick=()=>{item.qty--; if(item.qty<=0){cart=cart.filter(i=>i.id!==item.id);} syncCart(); renderCart();}; ctr.appendChild(plus); ctr.appendChild(minus); div.appendChild(ctr); wrap.appendChild(div); }); document.getElementById('cartTotal').textContent = 'جمع کل: ' + total.toLocaleString() + ' تومان'; } // user panel toggle userBtn.addEventListener('click',()=>{ if(userPanel.style.display==='none' || userPanel.style.display===''){ userPanel.style.display='block'; } else userPanel.style.display='none'; }); // fill user function renderUser(){ userName.textContent = user.name; userPhone.textContent = user.phone; walletAmount.textContent = wallet.toLocaleString() + ' تومان'; } // wallet modal document.getElementById('openWallet').addEventListener('click',()=>{walletModal.style.display='flex';}); walletModal.querySelector('.btn-cancel').addEventListener('click',()=>{walletModal.style.display='none';}); walletModal.querySelector('.btn-ok').addEventListener('click',()=>{ const v = parseInt(document.getElementById('walletInput').value||'0'); if(v>0){wallet += v; localStorage.setItem('kalino_wallet',wallet); renderUser(); walletModal.style.display='none'; document.getElementById('walletInput').value=''; alert('موجودی با موفقیت افزایش یافت');} else alert('مبلغ معتبر نیست'); }); // cart drawer toggles document.getElementById('openCart').addEventListener('click',()=>{cartDrawer.style.display = cartDrawer.style.display==='none'?'block':'none'; renderCart();}); // bottom nav const navHome = document.getElementById('navHome'); const navCats = document.getElementById('navCats'); const navCart = document.getElementById('navCart'); navHome.addEventListener('click',()=>{setActive(navHome); window.scrollTo({top:0,behavior:'smooth'})}); navCats.addEventListener('click',()=>{setActive(navCats); document.getElementById('categoriesRow').scrollIntoView({behavior:'smooth'})}); navCart.addEventListener('click',()=>{setActive(navCart); cartDrawer.style.display='block'; renderCart();}); function setActive(el){document.querySelectorAll('.bottom-btn').forEach(b=>b.classList.remove('active')); el.classList.add('active');} // view promos document.getElementById('viewPromos').addEventListener('click',()=>{alert('صفحه تخفیفات هنوز تکمیل نشده — بعدا اضافه می‌شود');}); // support actions document.getElementById('callSupport').addEventListener('click',()=>{window.location.href='tel:09120000000'}); document.getElementById('chatSupport').addEventListener('click',()=>{alert('چت با پشتیبانی (نمایشی)')}); // basic search filter document.getElementById('searchInput').addEventListener('input',(e)=>{ const q = e.target.value.trim().toLowerCase(); document.querySelectorAll('.prod').forEach(node=>{ const t = node.querySelector('.title').textContent.toLowerCase(); node.style.display = t.includes(q)?'flex':'none'; }); }); // init render renderCategories(); renderProducts(); syncCart(); renderCart(); renderUser();
+</script>
+</body>
+</html>
