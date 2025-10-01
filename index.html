@@ -8,60 +8,159 @@
     
 </body>
 </html>
-Kalino v2 :root{ --bg-dark:#0b0e17; --bg-gray:#1f2937; --bg-blue:#1e3a8a; --text-white:#fff; --accent:#ff5a5f; --accent-2:#4caf50; } *{box-sizing:border-box; margin:0; padding:0} body{font-family:'Vazirmatn',sans-serif; background:var(--bg-dark); color:var(--text-white); min-height:100vh; direction:rtl;} header{display:flex;align-items:center;justify-content:center;padding:14px 16px;position:sticky;top:0;z-index:20;background:var(--bg-dark);border-bottom:1px solid rgba(255,255,255,0.1);} header .left{position:absolute;left:16px;top:12px;} header .brand{font-weight:700;font-size:20px;} .icon-btn{width:44px;height:44px;border-radius:12px;background:var(--bg-gray);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid rgba(255,255,255,0.05);} .search-wrap{width:100%;padding:12px 16px;} .search{background:var(--bg-gray);border-radius:12px;padding:10px 12px;display:flex;align-items:center;border:1px solid rgba(255,255,255,0.05);} .search input{flex:1;background:transparent;border:0;color:var(--text-white);outline:none;font-size:15px;} .search input::placeholder{color:var(--accent);} main{padding:12px;} .section{margin-bottom:20px;} .section h2{margin-bottom:12px;color:var(--accent);} .categories{display:flex;flex-direction:column;gap:12px;} .cat-card{background:var(--bg-gray);padding:12px;border-radius:12px;display:flex;align-items:center;gap:12px;cursor:pointer;} .cat-card .emoji{font-size:28px;} .carousel{display:flex;overflow-x:auto;gap:12px;padding-bottom:8px;} .carousel::-webkit-scrollbar{display:none;} .prod-card{min-width:160px;background:var(--bg-blue);padding:10px;border-radius:12px;flex-shrink:0;display:flex;flex-direction:column;gap:8px;box-shadow:0 4px 8px rgba(0,0,0,0.3);} .prod-card img{width:100%;height:120px;object-fit:cover;border-radius:8px;} .prod-card .title{font-weight:600;} .prod-card .price{color:var(--accent-2);font-size:14px;} .prod-card button{margin-top:auto;padding:8px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer;} .bottom-nav{position:fixed;left:0;right:0;bottom:0;height:64px;background:var(--bg-gray);display:flex;justify-content:space-around;align-items:center;z-index:50;} .bottom-btn{display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--text-white);cursor:pointer;font-size:12px;} .bottom-btn.active{color:var(--accent);} .page{display:none;} .page.active{display:block;} .page-header{font-weight:700;font-size:18px;margin-bottom:12px;color:var(--accent);} .list-item{padding:12px;background:var(--bg-gray);border-radius:12px;margin-bottom:8px;cursor:pointer;} .list-item .label{color:var(--text-white);} .wallet-section{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;} .wallet-section button{padding:6px 12px;border-radius:8px;background:var(--accent);border:0;color:#fff;cursor:pointer;} 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalino v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-dark:#0b0e17;
+  --bg-gray:#1f2937;
+  --bg-blue:#1e3a8a;
+  --text-white:#fff;
+  --accent:#ff5a5f;
+  --accent-2:#4caf50;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Vazirmatn',sans-serif;background:var(--bg-dark);color:var(--text-white);min-height:100vh;direction:rtl;}
+header{display:flex;align-items:center;justify-content:center;padding:14px 16px;position:sticky;top:0;z-index:20;background:var(--bg-dark);border-bottom:1px solid rgba(255,255,255,0.1);}
+header .left{position:absolute;left:16px;top:12px;}
+header .brand{font-weight:700;font-size:20px;}
+.icon-btn{width:44px;height:44px;border-radius:12px;background:var(--bg-gray);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid rgba(255,255,255,0.05);}
+.search-wrap{width:100%;padding:12px 16px;}
+.search{background:var(--bg-gray);border-radius:12px;padding:10px 12px;display:flex;align-items:center;border:1px solid rgba(255,255,255,0.05);}
+.search input{flex:1;background:transparent;border:0;color:var(--text-white);outline:none;font-size:15px;}
+.search input::placeholder{color:var(--accent);}
+main{padding:12px;}
+.section{margin-bottom:20px;}
+.section h2{margin-bottom:12px;color:var(--accent);}
+.categories{display:flex;flex-direction:column;gap:12px;}
+.cat-card{background:var(--bg-gray);padding:12px;border-radius:12px;display:flex;align-items:center;gap:12px;cursor:pointer;}
+.cat-card .emoji{font-size:28px;}
+.carousel{display:flex;overflow-x:auto;gap:12px;padding-bottom:8px;}
+.carousel::-webkit-scrollbar{display:none;}
+.prod-card{min-width:160px;background:var(--bg-blue);padding:10px;border-radius:12px;flex-shrink:0;display:flex;flex-direction:column;gap:8px;box-shadow:0 4px 8px rgba(0,0,0,0.3);}
+.prod-card img{width:100%;height:120px;object-fit:cover;border-radius:8px;}
+.prod-card .title{font-weight:600;}
+.prod-card .price{color:var(--accent-2);font-size:14px;}
+.prod-card button{margin-top:auto;padding:8px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer;}
+.bottom-nav{position:fixed;left:0;right:0;bottom:0;height:64px;background:var(--bg-gray);display:flex;justify-content:space-around;align-items:center;z-index:50;}
+.bottom-btn{display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--text-white);cursor:pointer;font-size:12px;}
+.bottom-btn.active{color:var(--accent);}
+.page{display:none;}
+.page.active{display:block;}
+.page-header{font-weight:700;font-size:18px;margin-bottom:12px;color:var(--accent);}
+.list-item{padding:12px;background:var(--bg-gray);border-radius:12px;margin-bottom:8px;cursor:pointer;}
+.wallet-section{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.wallet-section button{padding:6px 12px;border-radius:8px;background:var(--accent);border:0;color:#fff;cursor:pointer;}
+</style>
+</head>
+<body>
+<header>
+  <div class="left">
+    <div class="icon-btn" id="userBtn">👤</div>
+  </div>
+  <div class="brand">Kalino</div>
+</header>
+<div class="search-wrap">
+  <div class="search">
+    <input id="searchInput" placeholder="چی لازم داری؟" />
+    <div class="magn">🔍</div>
+  </div>
+</div>
+<main>
+  <!-- Home Page -->
+  <div class="page active" id="homePage">
+    <section class="section">
+      <h2>تخفیفات ویژه امروز</h2>
+      <div class="carousel" id="promoCarousel"></div>
+    </section>
+    <section class="section">
+      <h2>دسته‌بندی‌ها</h2>
+      <div class="categories" id="categoriesList"></div>
+    </section>
+    <section class="section">
+      <h2>پیشنهادها برای شما</h2>
+      <div class="carousel" id="productsCarousel"></div>
+    </section>
+  </div>
+  <!-- Cart Page -->
+  <div class="page" id="cartPage">
+    <h3 class="page-header">سبد خرید</h3>
+    <div id="cartItems"></div>
+    <div class="wallet-section">
+      <span id="cartTotal">جمع کل: 0 تومان</span>
+      <button id="checkoutBtn">ثبت سفارش</button>
+    </div>
+  </div>
+  <!-- Account Page -->
+  <div class="page" id="accountPage">
+    <h3 class="page-header">حساب کاربری</h3>
+    <div class="list-item" id="userName">نام و نام خانوادگی</div>
+    <div class="list-item" id="userPhone">۰۹۱20000000</div>
+    <div class="list-item" id="walletAmount">کیف پول: ۰ تومان</div>
+    <div class="list-item">لیست سفارش‌ها</div>
+    <div class="list-item">تماس با پشتیبانی</div>
+    <div class="list-item">چت با پشتیبانی</div>
+    <div class="list-item">معرفی دوستان</div>
+    <div class="list-item">زبان</div>
+    <div class="list-item">سوالات متداول</div>
+    <div class="list-item">قوانین</div>
+  </div>
+</main>
+<nav class="bottom-nav">
+  <div class="bottom-btn active" data-page="homePage">🏠<div>خانه</div></div>
+  <div class="bottom-btn" data-page="cartPage">🛒<div>سبد خرید</div></div>
+  <div class="bottom-btn" data-page="accountPage">👤<div>حساب</div></div>
+</nav>
+<script>
+const pages = document.querySelectorAll('.page');
+const navBtns = document.querySelectorAll('.bottom-btn');
+function showPage(id){pages.forEach(p=>p.classList.remove('active')); document.getElementById(id).classList.add('active'); navBtns.forEach(b=>b.classList.remove('active')); document.querySelector(`.bottom-btn[data-page='${id}']`)?.classList.add('active');}
+navBtns.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 
-👤
+// Sample data
+const categories = [
+  {title:'دستمال و شوینده',emoji:'🧼'},
+  {title:'لبنیات',emoji:'🥛'},
+  {title:'خوار و بار',emoji:'🛒'},
+  {title:'آرایش و بهداشتی',emoji:'💄'},
+  {title:'نوشیدنی',emoji:'🥤'},
+  {title:'تنقلات',emoji:'🍫'},
+  {title:'صبحانه',emoji:'🥐'},
+  {title:'کنسرو و غذای آماده',emoji:'🥫'},
+  {title:'سوسیس و کالباس',emoji:'🍖'},
+  {title:'غذای منجمد',emoji:'❄️'},
+  {title:'کودک و نوزاد',emoji:'👶'},
+  {title:'لوازم بهداشتی',emoji:'🧴'}
+];
+const products = [
+  {name:'چیپس نمکی',price:20000,img:'https://via.placeholder.com/300x200?text=چیپس'},
+  {name:'شیر کم چرب 1L',price:15000,img:'https://via.placeholder.com/300x200?text=شیر'},
+  {name:'کنسرو لوبیا',price:12000,img:'https://via.placeholder.com/300x200?text=کنسرو'},
+  {name:'کالباس ویژه',price:45000,img:'https://via.placeholder.com/300x200?text=کالباس'}
+];
 
-Kalino
+// Populate categories
+const categoriesList = document.getElementById('categoriesList');
+categories.forEach(cat=>{
+  const div = document.createElement('div');
+  div.className='cat-card';
+  div.innerHTML=`<div class='emoji'>${cat.emoji}</div><div>${cat.title}</div>`;
+  categoriesList.appendChild(div);
+});
 
-🔍
-
-تخفیفات ویژه امروز
-
-دسته‌بندی‌ها
-
-پیشنهادها برای شما
-
-سبد خرید
-
-جمع کل: 0 تومان ثبت سفارش 
-
-حساب کاربری
-
-نام و نام خانوادگی
-
-۰۹۱20000000
-
-کیف پول: ۰ تومان
-
-لیست سفارش‌ها
-
-تماس با پشتیبانی
-
-چت با پشتیبانی
-
-معرفی دوستان
-
-زبان
-
-سوالات متداول
-
-قوانین
-
-🏠
-
-خانه
-
-📂
-
-دسته‌بندی
-
-🛒
-
-سبد خرید
-
-👤
-
-حساب
-
-const pages = document.querySelectorAll('.page'); const navBtns = document.querySelectorAll('.bottom-btn'); function showPage(id){pages.forEach(p=>p.classList.remove('active')); document.getElementById(id).classList.add('active'); navBtns.forEach(b=>b.classList.remove('active')); document.querySelector(`.bottom-btn[data-page='${id}']`)?.classList.add('active');} navBtns.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page))); <p>// sample data const categories = [ {title:'دستمال و شوینده',emoji:'🧼'}, {title:'لبنیات',emoji:'🥛'}, {title:'خوار و بار',emoji:'🛒'}, {title:'آرایش و بهداشتی',emoji:'💄'}, {title:'نوشیدنی',emoji:'🥤'}, {title:'تنقلات',emoji:'🍫'}, {title:'صبحانه',emoji:'🥐'}, {title:'کنسرو و غذای آماده',emoji:'🥫'}, {title:'سوسیس و کالباس',emoji:'🍖'}, {title:'غذای منجمد',emoji:'❄️'}, {title:'کودک و نوزاد',emoji:'👶'}, {title:'لوازم بهداشتی',emoji:'🧴'} ]; const products = [ {name:'چیپس نمکی',price:20000,img:'<a href="https://via.placeholder.com/300x200?text=چیپس">https://via.placeholder.com/300x200?text=چیپس</a>'}, {name:'شیر کم چرب 1L',price:15000,img:'<a href="https://via.placeholder.com/300x200?text=شیر">https://via.placeholder.com/300x200?text=شیر</a>'}, {name:'کنسرو لوبیا',price:12000,img:'<a href="https://via.placeholder.com/300x200?text=کنسرو">https://via.placeholder.com/300x200?text=کنسرو</a>'}, {name:'کالباس ویژه',price:45000,img</p>
+// Populate products carousel
+const productsCarousel = document.getElementById('productsCarousel');
+products.forEach(p=>{
+  const div = document.createElement('div');
+  div.className='prod-card';
+  div.innerHTML=`<img src='${p.img}' /><div class='title'>${p.name}</div><div class='price'>${p.price} تومان</div><button>اضافه به سبد</button>`;
+  productsCarousel.appendChild(div);
+});
+</script>
+</body>
+</html>
